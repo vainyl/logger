@@ -12,13 +12,13 @@ declare(strict_types=1);
 
 namespace Vainyl\Logger\Extension;
 
-use Vainyl\Core\Exception\AbstractCoreException;
+use Vainyl\Core\Extension\AbstractExtension;
 
 /**
  * Class LoggerExtension
  *
  * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
  */
-class LoggerExtension extends AbstractCoreException
+class LoggerExtension extends AbstractExtension
 {
 }
