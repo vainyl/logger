@@ -23,6 +23,9 @@
             "url": "https://satis.vainyl.com:444"
         }
     ],
+    "suggest" : {
+        "vainyl/monolog" : "Monolog logger implementation with dynamic log level switching"
+    },
     "prefer-stable": true,
     "minimum-stability": "dev"
 }
