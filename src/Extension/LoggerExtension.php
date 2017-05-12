@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Vainyl\Logger\Extension;
 
+use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Vainyl\Core\Application\EnvironmentInterface;
 use Vainyl\Core\Extension\AbstractExtension;
@@ -31,7 +32,7 @@ class LoggerExtension extends AbstractExtension
         ContainerBuilder $container,
         EnvironmentInterface $environment = null
     ): AbstractExtension {
-        $container->addCompilerPass(new LoggerHandlerCompilerPass());
+        $container->addCompilerPass(new LoggerHandlerCompilerPass(), PassConfig::TYPE_AFTER_REMOVING);
 
         return parent::load($configs, $container, $environment);
     }

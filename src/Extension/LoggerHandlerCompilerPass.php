@@ -32,14 +32,7 @@ class LoggerHandlerCompilerPass implements CompilerPassInterface
         $handlers = $container->findTaggedServiceIds('logger.handler');
         foreach ($loggers as $definitionId => $description) {
             $loggerDefinition = $container->findDefinition($definitionId);
-            if ($loggerDefinition->isAbstract()) {
-                continue;
-            }
             foreach ($handlers as $handlerId => $tags) {
-                $handlerDefinition = $container->findDefinition($handlerId);
-                if ($handlerDefinition->isAbstract()) {
-                    continue;
-                }
                 $loggerDefinition->addMethodCall('addHandler', [new Reference($handlerId)]);
             }
         }
