@@ -22,6 +22,13 @@ use Psr\Log\LoggerInterface;
 interface DynamicLoggerInterface extends LoggerInterface
 {
     /**
+     * @param mixed $handler
+     *
+     * @return DynamicLoggerInterface
+     */
+    public function addHandler($handler) : DynamicLoggerInterface;
+
+    /**
      * @inheritDoc
      */
     public function overrideLevel($level) : DynamicLoggerInterface;

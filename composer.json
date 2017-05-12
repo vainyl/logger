@@ -15,7 +15,7 @@
     "require": {
         "php": ">=7.0",
         "psr/log": "^1",
-        "vainyl/core": "dev-master"
+        "vainyl/core": "0.1.x-dev"
     },
     "repositories": [
         {
@@ -23,6 +23,9 @@
             "url": "https://satis.vainyl.com:444"
         }
     ],
+    "suggest" : {
+        "vainyl/monolog" : "Monolog logger implementation with dynamic log level switching"
+    },
     "prefer-stable": true,
     "minimum-stability": "dev"
 }
