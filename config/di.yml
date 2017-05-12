@@ -1,3 +1,9 @@
 services:
   logger.abstract:
     abstract: true
+    tags:
+      - {name: logger}
+  logger.handler:
+    abstract: true
+    tags:
+      - {name: logger.handler}
