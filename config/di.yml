@@ -3,7 +3,7 @@ services:
     abstract: true
     tags:
       - {name: logger}
-  logger.handler:
+  logger.handler.abstract:
     abstract: true
     tags:
       - {name: logger.handler}

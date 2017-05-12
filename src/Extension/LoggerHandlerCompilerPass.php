@@ -14,7 +14,6 @@ namespace Vainyl\Logger\Extension;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 
 /**
@@ -29,14 +28,19 @@ class LoggerHandlerCompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        /**
-         * @var Definition[] $definitions
-         */
-        $definitions = $container->findTaggedServiceIds('logger');
-        $services = $container->findTaggedServiceIds('logger.handler');
-        foreach ($definitions as $definition => $description) {
-            foreach ($services as $id => $tags) {
-                $container->findDefinition($definition)->addMethodCall('addHandler', [new Reference($id)]);
+        $loggers = $container->findTaggedServiceIds('logger');
+        $handlers = $container->findTaggedServiceIds('logger.handler');
+        foreach ($loggers as $definitionId => $description) {
+            $loggerDefinition = $container->findDefinition($definitionId);
+            if ($loggerDefinition->isAbstract()) {
+                continue;
+            }
+            foreach ($handlers as $handlerId => $tags) {
+                $handlerDefinition = $container->findDefinition($handlerId);
+                if (false === $handlerDefinition->isAbstract()) {
+                    continue;
+                }
+                $loggerDefinition->addMethodCall('addHandler', [new Reference($handlerId)]);
             }
         }
 
