@@ -12,14 +12,14 @@ declare(strict_types=1);
 
 namespace Vainyl\Logger\Extension;
 
-use Vainyl\Core\Extension\AbstractExtension;
+use Vainyl\Core\Extension\AbstractFrameworkExtension;
 
 /**
  * Class LoggerExtension
  *
  * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
  */
-class LoggerExtension extends AbstractExtension
+class LoggerExtension extends AbstractFrameworkExtension
 {
     /**
      * @inheritDoc
