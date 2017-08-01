@@ -13,8 +13,9 @@
         }
     },
     "require": {
+        "php": ">=7.1",
         "psr/log": "^1",
-        "vainyl/core": "dev-master"
+        "vainyl/core": "0.1.x-dev"
     },
     "repositories": [
         {
