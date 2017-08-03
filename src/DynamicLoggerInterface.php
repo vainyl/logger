@@ -26,15 +26,15 @@ interface DynamicLoggerInterface extends LoggerInterface
      *
      * @return DynamicLoggerInterface
      */
-    public function addHandler($handler) : DynamicLoggerInterface;
+    public function addHandler($handler): DynamicLoggerInterface;
 
     /**
      * @inheritDoc
      */
-    public function overrideLevel($level) : DynamicLoggerInterface;
+    public function overrideLevel($level): DynamicLoggerInterface;
 
     /**
      * @inheritDoc
      */
-    public function restoreLevel() : DynamicLoggerInterface;
+    public function restoreLevel(): DynamicLoggerInterface;
 }

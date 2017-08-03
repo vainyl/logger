@@ -8,20 +8,20 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://github.com/allflame/vain-logger
  */
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Vainyl\Logger\Extension;
 
-use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
+use Vainyl\Core\Extension\AbstractCompilerPass;
 
 /**
  * Class LoggerHandlerCompilerPass
  *
  * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
  */
-class LoggerHandlerCompilerPass implements CompilerPassInterface
+class LoggerHandlerCompilerPass extends AbstractCompilerPass
 {
     /**
      * @inheritDoc
