@@ -26,6 +26,6 @@ class LoggerExtension extends AbstractFrameworkExtension
      */
     public function getCompilerPasses(): array
     {
-        return [new LoggerHandlerCompilerPass()];
+        return [[new LoggerHandlerCompilerPass()]];
     }
 }
