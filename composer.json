@@ -15,7 +15,7 @@
     "require": {
         "php": ">=7.1",
         "psr/log": "^1",
-        "vainyl/core": "0.1.x-dev"
+        "vainyl/core": "dev-master"
     },
     "repositories": [
         {
@@ -24,7 +24,7 @@
         }
     ],
     "suggest" : {
-        "vainyl/monolog" : "Monolog logger implementation with dynamic log level switching"
+        "vainyl/monolog-bridge" : "Monolog logger bridge with dynamic log level switching"
     },
     "prefer-stable": true,
     "minimum-stability": "dev"
