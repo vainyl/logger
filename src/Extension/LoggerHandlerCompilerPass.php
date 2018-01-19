@@ -33,6 +33,10 @@ class LoggerHandlerCompilerPass extends AbstractCompilerPass
         foreach ($loggers as $definitionId => $description) {
             $loggerDefinition = $container->findDefinition($definitionId);
             foreach ($handlers as $handlerId => $tags) {
+                if ($container->findDefinition($handlerId)->isAbstract()) {
+                    continue;
+                }
+
                 $loggerDefinition->addMethodCall('addHandler', [new Reference($handlerId)]);
             }
         }
